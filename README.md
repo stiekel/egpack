@@ -14,7 +14,7 @@ npm i -g egpack
 Go to your egret release web folder:
 
 ```sh
-cd /Volumes/Macmite/kangya/labs/projects/czbGame/bin-release/web/alpha-0.0.1
+cd /Volumes/Macmite/stiekel/labs/projects/testGame/bin-release/web/alpha-0.0.1
 ```
 
 and run:
@@ -26,7 +26,7 @@ egpack
 or you can pass the release web folder as the param like this:
 
 ```sh
-egpack /Volumes/Macmite/kangya/labs/projects/czbGame/bin-release/web/alpha-0.0.1
+egpack /Volumes/Macmite/stiekel/labs/projects/testGame/bin-release/web/alpha-0.0.1
 
 ```
 
