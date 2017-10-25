@@ -1,5 +1,5 @@
 # egret-pack
-`egpack` will combine all Egret release web js as a combine js file, and change the `manifest.json` automatic.
+`egpack` use to combine all Egret release web js files as a single js file, it will add a file content hash code in the filename, and change the `manifest.json` automatic.
 
 ## Setup
 
