@@ -1,8 +1,8 @@
 #!/usr/bin/env node
+
+'use strict';
 var path = require('path')
 var fs = require('fs')
-
-// var stringHash = require('string-hash')
 
 // get the egret dist path
 var targetPath = __dirname
@@ -14,7 +14,6 @@ if (process.argv.length >= 2) {
 var manifestPath = path.join(targetPath, 'manifest.json')
 if (!fs.existsSync(manifestPath)) {
   console.error('Can NOT find manifest.json in', targetPath)
-  console.log('manifestPath', manifestPath)
   process.exit()
 }
 var manifest = require(manifestPath)
@@ -38,7 +37,7 @@ jsfiles.map(function(fn){
   }
   jscontent += ['\n/***********', fn, ' START ***********/\n'].join(' ')
   jscontent += fs.readFileSync(fnPath)
-  jscontent += ['\n/***********', fn, ' ENDd **********/\n'].join(' ')
+  jscontent += ['\n/***********', fn, ' END **********/\n'].join(' ')
 })
 
 // get string hash
@@ -66,16 +65,13 @@ writeFile(path.join(targetPath, 'manifest.json'), {
 
 console.log('egpack done!')
 
-
 function writeFile (path, content) {
   var text = ''
   if (typeof content !== 'string') {
     text = JSON.stringify(content)
-  } else {
-    text = content
   }
 
-  fs.writeFileSync(path, text, {
+  fs.writeFileSync(path, text || content, {
     encoding: 'utf8'
   })
 }
