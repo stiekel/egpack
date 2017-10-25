@@ -6,7 +6,7 @@ var fs = require('fs')
 
 // get the egret dist path
 var targetPath = process.cwd()
-if (process.argv.length >= 2) {
+if (process.argv.length >= 3) {
   targetPath = process.argv[process.argv.length - 1]
 }
 targetPath = path.resolve(targetPath)
