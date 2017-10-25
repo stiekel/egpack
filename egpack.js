@@ -5,10 +5,11 @@ var path = require('path')
 var fs = require('fs')
 
 // get the egret dist path
-var targetPath = __dirname
+var targetPath = process.cwd()
 if (process.argv.length >= 2) {
   targetPath = process.argv[process.argv.length - 1]
 }
+targetPath = path.resolve(targetPath)
 
 // get manifest.json
 var manifestPath = path.join(targetPath, 'manifest.json')
